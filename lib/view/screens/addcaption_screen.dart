@@ -23,7 +23,12 @@ late VideoPlayerController videoPlayerController;
 VideoUploadController videoUploadController = Get.put(VideoUploadController());
 TextEditingController songNameController = new TextEditingController();
 TextEditingController captionController = new TextEditingController();
-
+@override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    videoPlayerController.dispose();
+  }
 @override
   void initState() {
     // TODO: implement initState

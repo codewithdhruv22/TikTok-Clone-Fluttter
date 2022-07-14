@@ -3,6 +3,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:tiktok_yt/view/screens/add_video.dart';
+import 'package:tiktok_yt/view/screens/display_screen.dart';
+
 
 // getRandomColor() => Colors.primaries[Random().nextInt(Colors.primaries.length)];
 
@@ -18,7 +20,7 @@ var buttonColor = Colors.red[400];
 const borderColor = Colors.grey;
 
 var pageindex = [
-  Text('Home'),
+DisplayVideo_Screen(),
   Text('Search'),
  addVideoScreen(),
   Text('Messages'),
