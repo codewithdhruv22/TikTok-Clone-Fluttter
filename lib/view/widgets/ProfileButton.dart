@@ -23,8 +23,8 @@ String profilePhotoUrl;
             child: ClipRRect(
               borderRadius: BorderRadius.circular(35),
               child: Image(
-                // image: NetworkImage(profilePhotoUrl),
-                image: NetworkImage("https://instagram.fbho4-2.fna.fbcdn.net/v/t51.2885-19/279889249_1691438077873501_3251232527595982800_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fbho4-2.fna.fbcdn.net&_nc_cat=101&_nc_ohc=hlHNLuY3eQsAX-ssLCW&tn=8zgYjzzt8FVi4fsJ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT99z0Q3VA_rRP3kZfuNGJu7RwDqtpWdvI14uVG7TS7TIQ&oe=62D67E15&_nc_sid=8fd12b"),
+                image: NetworkImage(profilePhotoUrl),
+
                 fit: BoxFit.cover,
               ),
             ),

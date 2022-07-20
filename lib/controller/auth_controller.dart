@@ -28,6 +28,7 @@ this.proimg = img;
 
    late Rx<User?> _user;
 
+
 // _user  - Nadi
   // _user.bindStream - Nadi Me Color Deko
   //ever - Aap Ho
