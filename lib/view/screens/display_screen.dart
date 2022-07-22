@@ -58,19 +58,24 @@ final VideoController videoController = Get.put(VideoController());
                               profilePhotoUrl: data.profilePic,
                             ),
 
-                            Column(
-                              children: [
-                                Icon(
-                                  Icons.favorite,
-                                  size: 45,
-                                  color: Colors.white,
-                                ),
-                                Text(
-                                  data.likes.length.toString(),
-                                  style:
-                                      TextStyle(fontSize: 15, color: Colors.white),
-                                )
-                              ],
+                            InkWell(
+                              onTap: (){
+                                videoController.likedVideo(data.id);
+                              },
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    Icons.favorite,
+                                    size: 45,
+                                    color: Colors.pinkAccent,
+                                  ),
+                                  Text(
+                                    data.likes.length.toString(),
+                                    style:
+                                        TextStyle(fontSize: 15, color: Colors.white),
+                                  )
+                                ],
+                              ),
                             ),
                             Column(
                               children: [
