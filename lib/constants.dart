@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:tiktok_yt/view/screens/add_video.dart';
 import 'package:tiktok_yt/view/screens/display_screen.dart';
+import 'package:tiktok_yt/view/screens/search_screen.dart';
 
 
 // getRandomColor() => Colors.primaries[Random().nextInt(Colors.primaries.length)];
@@ -21,7 +22,7 @@ const borderColor = Colors.grey;
 
 var pageindex = [
 DisplayVideo_Screen(),
-  Text('Search'),
+ SearchScreen(),
  addVideoScreen(),
   Text('Messages'),
   Text('Profile')

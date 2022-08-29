@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_yt/view/screens/comment_screen.dart';
 import 'package:tiktok_yt/view/widgets/AlbumRotator.dart';
 import 'package:tiktok_yt/view/widgets/ProfileButton.dart';
 import 'package:tiktok_yt/view/widgets/TikTokVideoPlayer.dart';
 import 'package:get/get.dart';
 import '../../controller/video_controller.dart';
 
+
+
+
 class DisplayVideo_Screen extends StatelessWidget {
    DisplayVideo_Screen({Key? key}) : super(key: key);
 final VideoController videoController = Get.put(VideoController());
   @override
   Widget build(BuildContext context) {
+
+
+    
     return Scaffold(
       body: Obx(() {
           return PageView.builder(
@@ -91,27 +98,32 @@ final VideoController videoController = Get.put(VideoController());
                                 )
                               ],
                             ),
-                            Column(
-                              children: [
-                                Icon(
-                                  Icons.comment,
-                                  size: 45,
-                                  color: Colors.white,
-                                ),
-                                Text(
-                                 data.commentsCount.toString(),
-                                  style:
-                                      TextStyle(fontSize: 15, color: Colors.white),
-                                ),
-                                SizedBox(height: 20,),
-                                Column(
-                                  children: [
-                                    AlbumRotator(profilePicUrl: data.profilePic)
-
-                                  ],
-                                ),
-
-                              ],
+                            InkWell(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>CommentScreen(id : data.id)));
+                              },
+                              child: Column(
+                                children: [
+                                  Icon(
+                                    Icons.comment,
+                                    size: 45,
+                                    color: Colors.white,
+                                  ),
+                                  Text(
+                                   data.commentsCount.toString(),
+                                    style:
+                                        TextStyle(fontSize: 15, color: Colors.white),
+                                  ),
+                                  SizedBox(height: 20,),
+                                  Column(
+                                    children: [
+                                      AlbumRotator(profilePicUrl: data.profilePic)
+                            
+                                    ],
+                                  ),
+                            
+                                ],
+                              ),
                             )
                           ],
                         ),
