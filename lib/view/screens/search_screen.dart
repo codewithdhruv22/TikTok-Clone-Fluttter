@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_yt/controller/searchUser_controller.dart';
 import 'package:tiktok_yt/model/user.dart';
+import 'package:tiktok_yt/view/screens/profile_screen.dart';
 import 'package:tiktok_yt/view/widgets/text_input.dart';
 import 'package:get/get.dart';
 class SearchScreen extends StatelessWidget {
@@ -41,7 +42,7 @@ final SearchController searchController = Get.put(SearchController());
 
             return ListTile(
               onTap: (){
-                Get.snackbar("You Clicked ${user.name}", "Opening Profile Page Of It.");
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen(uid: user.uid)));
               },
               leading: CircleAvatar(
                 backgroundImage: NetworkImage(

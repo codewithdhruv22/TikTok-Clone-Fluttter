@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tiktok_yt/controller/auth_controller.dart';
+import 'package:tiktok_yt/view/screens/auth/signup_screen.dart';
 import 'package:tiktok_yt/view/widgets/glitch.dart';
 
 import '../../widgets/text_input.dart';
@@ -45,7 +46,13 @@ TextEditingController _passwordController = new TextEditingController();
             }, child: Container(
 padding: EdgeInsets.symmetric(horizontal: 50 , vertical: 10),
 
-                child: Text("Login")))
+                child: Text("Login"))),
+
+
+            TextButton(onPressed: (){
+
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
+            }, child: Text("New User ? Click Here"))
           ],
         ),
 

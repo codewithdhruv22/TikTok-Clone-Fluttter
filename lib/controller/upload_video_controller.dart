@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 import 'package:tiktok_yt/model/video.dart';
+import 'package:tiktok_yt/view/screens/Home.dart';
 import 'package:uuid/uuid.dart';
 import 'package:video_compress/video_compress.dart';
 import 'dart:io';
@@ -60,7 +61,7 @@ class VideoUploadController extends GetxController{
     );
     await FirebaseFirestore.instance.collection("videos").doc(id).set(video.toJson());
     Get.snackbar("Video Uploaded Successfully", "Thank You Sharing Your Content");
-    Get.back();
+Get.to(HomeScreen());
     }catch(e){
 
       print(e);

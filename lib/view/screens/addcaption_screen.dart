@@ -9,6 +9,8 @@ class addCaption_Screen extends StatefulWidget {
   File videoFile;
   String videoPath;
 
+
+
    addCaption_Screen({Key? key ,
     required this.videoFile ,
     required this.videoPath}) : super(key: key);
@@ -23,6 +25,18 @@ late VideoPlayerController videoPlayerController;
 VideoUploadController videoUploadController = Get.put(VideoUploadController());
 TextEditingController songNameController = new TextEditingController();
 TextEditingController captionController = new TextEditingController();
+
+
+Widget UploadContent = Text("Upload");
+
+uploadVid(){
+  UploadContent = Text("Please Wait..");
+setState(() {
+
+});
+}
+
+
 @override
   void dispose() {
     // TODO: implement dispose
@@ -69,8 +83,10 @@ TextEditingController captionController = new TextEditingController();
             myLabelText: "Caption"),
       SizedBox(height: 10,),
       ElevatedButton(onPressed: (){
+        uploadVid();
         videoUploadController.uploadVideo(songNameController.text, captionController.text, widget.videoPath);
-      }, child: Text("Upload") , style: ElevatedButton.styleFrom(primary: buttonColor),)
+
+      }, child: UploadContent , style: ElevatedButton.styleFrom(primary: buttonColor),)
     ],
     ),
             )

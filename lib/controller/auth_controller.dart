@@ -8,6 +8,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tiktok_yt/model/user.dart';
 import 'package:tiktok_yt/view/screens/Home.dart';
 import 'package:tiktok_yt/view/screens/auth/login_screen.dart';
+import 'package:tiktok_yt/view/screens/auth/signup_screen.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
@@ -107,5 +108,10 @@ this.proimg = img;
     }catch(e){
 Get.snackbar("Error Logging In",e.toString());
     }
+  }
+
+  signOut(){
+    FirebaseAuth.instance.signOut();
+    Get.offAll(LoginScreen());
   }
 }
